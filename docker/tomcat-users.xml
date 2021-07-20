@@ -36,6 +36,8 @@
 -->
 
 <role rolename="numishare-admin"/>
-<user username="admin" password="" roles="numishare-admin"/>
-
+<role rolename="numishare-user"/>
+<role rolename="orbeon-user"/>
+  <user name="admin" password="" roles="numishare-admin,numishare-user,orbeon-user" />
+  <user name="user"   password="" roles="numishare-user,orbeon-user" />
 </tomcat-users>

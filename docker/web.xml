@@ -93,16 +93,17 @@
     </context-param>-->
     <!-- End session listener processors -->
     <!--Security filter for eXist-->
-    <filter>
+    <!-- removinmg references to exist - as described in https://doc.orbeon.com/configuration/advanced/production-war#removing-the-built-in-exist-database -->
+    <!--filter>
         <filter-name>orbeon-exist-filter</filter-name>
         <filter-class>org.orbeon.oxf.servlet.TokenSecurityFilter</filter-class>
-    </filter>
-    <filter-mapping>
+    </filter -->
+    <!--filter-mapping>
         <filter-name>orbeon-exist-filter</filter-name>
         <url-pattern>/exist/*</url-pattern>
         <dispatcher>REQUEST</dispatcher>
         <dispatcher>FORWARD</dispatcher>
-    </filter-mapping>
+    </filter-mapping -->
     <!--Limit concurrent access to Form Runner-->
     <filter>
         <filter-name>orbeon-limiter-filter</filter-name>
@@ -275,7 +276,7 @@
         <servlet-class>org.exist.xmlrpc.RpcServlet</servlet-class>
     </servlet>-->
     <!-- End eXist XMLRPC support -->
-    <servlet>
+    <!-- servlet>
         <servlet-name>exist-rest-servlet</servlet-name>
         <servlet-class>org.exist.http.servlets.EXistServlet</servlet-class>
         <init-param>
@@ -290,7 +291,7 @@
             <param-name>start</param-name>
             <param-value>true</param-value>
         </init-param>
-    </servlet>
+    </servlet -->
     <servlet-mapping>
         <servlet-name>orbeon-main-servlet</servlet-name>
         <url-pattern>/</url-pattern>
@@ -299,10 +300,10 @@
         <servlet-name>orbeon-renderer-servlet</servlet-name>
         <url-pattern>/xforms-renderer</url-pattern>
     </servlet-mapping>
-    <servlet-mapping>
+    <!--servlet-mapping>
         <servlet-name>exist-rest-servlet</servlet-name>
         <url-pattern>/exist/rest/*</url-pattern>
-    </servlet-mapping>
+    </servlet-mapping -->
     <!-- Uncomment this for the eXist XMLRPC support -->
     <!--
     <servlet-mapping>
@@ -321,7 +322,7 @@
     <!-- End relational persistence, and change oracle if necessary -->
     <!-- Form Runner authentication -->
     <!-- Require the security role on /fr/auth by default. To protect everything this must be changed. -->
-    <security-constraint>
+    <!--security-constraint>
         <web-resource-collection>
             <web-resource-name>Form Runner</web-resource-name>
             <url-pattern>/fr/auth</url-pattern>
@@ -329,9 +330,9 @@
         <auth-constraint>
             <role-name>orbeon-user</role-name>
         </auth-constraint>
-    </security-constraint>
+    </security-constraint -->
     <!-- The following pages and services are allowed without constraints by default -->
-    <security-constraint>
+    <!--security-constraint>
         <web-resource-collection>
             <web-resource-name>Form Runner services and public pages and resources</web-resource-name>
             <url-pattern>/fr/service/*</url-pattern>
@@ -341,7 +342,7 @@
             <url-pattern>/fr/login</url-pattern>
             <url-pattern>/fr/login-error</url-pattern>
         </web-resource-collection>
-    </security-constraint>
+    </security-constraint -->
     <!-- This will cause redirect from HTTP to HTTPS but not for eXist -->
     <!--
     <security-constraint>
@@ -374,22 +375,21 @@
         </login-config>
     -->
     <!-- Default security role, which can be changed as needed -->
-    <security-role>
-        <role-name>orbeon-user</role-name>
-    </security-role>
-    <security-constraint>
-        <web-resource-collection>
-            <web-resource-name>Numishare</web-resource-name>
-            <url-pattern>/numishare/admin/*</url-pattern>
-        </web-resource-collection>
-        <auth-constraint>
-            <role-name>numishare-admin</role-name>
-            <role-name>other-project-roles</role-name>
-        </auth-constraint>
-    </security-constraint>
-    <login-config>
-        <auth-method>BASIC</auth-method>
-    </login-config>
+<security-role>
+<role-name>numishare-admin</role-name>
+</security-role>
+<security-constraint>
+    <web-resource-collection>
+        <web-resource-name>Numishare</web-resource-name>
+        <url-pattern>/numishare/admin/*</url-pattern>
+    </web-resource-collection>
+    <auth-constraint>
+        <role-name>numishare-admin</role-name>
+    </auth-constraint>
+</security-constraint>
+<login-config>
+  <auth-method>BASIC</auth-method>
+</login-config>
     <session-config>
         <session-timeout>720</session-timeout>
     </session-config>
