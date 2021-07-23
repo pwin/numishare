@@ -419,8 +419,16 @@ PREFIX skos:	<http://www.w3.org/2004/02/skos/core#>]]></prefix>
 			<!-- post instance to Solr -->
 			<xforms:submission id="post-solr-doc" action="{instance('config')/solr_published}update" ref="instance('addIndex')" instance="addIndex"
 				replace="instance" method="post">
-				<xforms:message ev:event="xforms-submit-error" level="modal">Data Failed to POST to Solr. Index may be offline or URL is
-					incorrect.</xforms:message>
+				<!-- xforms:message ev:event="xforms-submit-error" level="modal">Data Failed to POST to Solr. Index may be offline or URL is
+					incorrect.</xforms:message -->
+					<xforms:message ev:event="xforms-submit-error" level="modal">
+                                   Submission error:  Data Failed to POST to Solr. Index may be offline or URL is incorrect. [import-symbols]
+                                      error-type: <xforms:output value="event('error-type')"/>
+                                      error-message: <xforms:output value="event('error-message')"/>
+                                      resource-uri: <xforms:output value="event('resource-uri')"/>
+                                      response-status-code: <xforms:output value="event('response-status-code')"/>
+                                      response-reason-phrase: <xforms:output value="event('response-reason-phrase')"/>
+                                  </xforms:message>
 				<xforms:action ev:event="xforms-submit-done">
 					<xforms:setvalue ref="instance('control-instance')/status">Successfully published to Solr.</xforms:setvalue>
 					<xforms:send submission="submit-commit"/>

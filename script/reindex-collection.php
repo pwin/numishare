@@ -8,7 +8,7 @@
  * Execute script with `php reindex-collection.php $collection_name`
  *******/
 
-define("NUMISHARE_URL", 'http://localhost:8080/orbeon/numishare/');
+define("NUMISHARE_URL", 'http://localhost:8081/orbeon/numishare/');
 define("SOLR_URL", 'http://localhost:8983/solr/numishare/update/');
 
 $eXist_config_path = '/usr/local/projects/numishare/exist-config.xml';

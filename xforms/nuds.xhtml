@@ -638,7 +638,15 @@
                         <!-- ***** SOLR ***** -->
                         <xforms:submission id="to-solr" method="get" replace="instance" instance="addIndex" serialization="none"
                                 resource="/numishare/{instance('control-instance')/collection-name}/id/{instance('control-instance')/solr-id}.solr">
-                                <xforms:message ev:event="xforms-submit-error" level="modal">Error transforming NUDS document to Solr document.</xforms:message>
+                                <!-- xforms:message ev:event="xforms-submit-error" level="modal">Error transforming NUDS document to Solr document.</xforms:message -->
+                                  <xforms:message ev:event="xforms-submit-error" level="modal">
+                                   Submission error: Error transforming NUDS document to Solr document. [nuds]
+                                      error-type: <xforms:output value="event('error-type')"/>
+                                      error-message: <xforms:output value="event('error-message')"/>
+                                      resource-uri: <xforms:output value="event('resource-uri')"/>
+                                      response-status-code: <xforms:output value="event('response-status-code')"/>
+                                      response-reason-phrase: <xforms:output value="event('response-reason-phrase')"/>
+                                  </xforms:message>
                                 <xforms:action ev:event="xforms-submit-done">
                                         <xforms:send submission="publish-submission"/>
                                 </xforms:action>
@@ -650,8 +658,16 @@
                                 <xforms:action ev:event="xforms-submit-done">
                                         <xforms:send submission="submit-commit"/>
                                 </xforms:action>
-                                <xforms:message ev:event="xforms-submit-error" level="modal">Data Failed to POST to Solr. Index may be offline or URL is
-                                        incorrect.</xforms:message>
+                                <!-- xforms:message ev:event="xforms-submit-error" level="modal">Data Failed to POST to Solr. Index may be offline or URL is
+                                        incorrect.</xforms:message -->
+                                <xforms:message ev:event="xforms-submit-error" level="modal">
+                                   Submission error: Data Failed to POST to Solr. Index may be offline or URL is incorrect [nuds]
+                                      error-type: <xforms:output value="event('error-type')"/>
+                                      error-message: <xforms:output value="event('error-message')"/>
+                                      resource-uri: <xforms:output value="event('resource-uri')"/>
+                                      response-status-code: <xforms:output value="event('response-status-code')"/>
+                                      response-reason-phrase: <xforms:output value="event('response-reason-phrase')"/>
+                                  </xforms:message>
                         </xforms:submission>
 
                         <xforms:submission id="delete-solr-doc" action="{instance('config')/solr_published}update" ref="instance('deleteId')" instance="deleteId"

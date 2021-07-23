@@ -1,0 +1,172 @@
+<config version="20.09">
+                                        <title>Numishare</title>
+                                        <description>A short description of the collection.</description>
+                                        <logo/>
+                                        <url>http://localhost:8081/orbeon/numishare/peter1/</url>
+                                        <server-port>8081</server-port>
+                                        <sparql_endpoint>http://localhost:3030/numishare/sparql</sparql_endpoint>
+                                        <annotation_sparql_endpoint/>
+                                        <type_series/>
+                                        <specimens_per_page>48</specimens_per_page>
+                                        <solr_published>http://localhost:8983/solr/numishare-published/</solr_published>
+                                        <geonames_api_key/>
+                                        <mapboxKey/>
+                                        <contact/>
+                                        <google_analytics/>
+                                        <collection_type>object</collection_type>
+                                        <features_enabled>true</features_enabled>
+                                        <pelagios_enabled>false</pelagios_enabled>
+                                        <ctype_enabled>false</ctype_enabled>
+                                        <index_subtype_metadata>false</index_subtype_metadata>
+                                        <index_subtypes_as_references>false</index_subtypes_as_references>
+                                        <union_type_catalog enabled="false">
+                                                <series typeSeries="" uriSpace="" collectionName=""/>
+                                        </union_type_catalog>
+                                        <uri_space>http://localhost:8081/orbeon/numishare/peter1/id/</uri_space>
+                                        <baselayers>
+                                                <layer enabled="true">mb_physical</layer>
+                                                <layer enabled="true">osm</layer>
+                                                <layer enabled="true">imperium</layer>
+                                        </baselayers>
+                                        <template>
+                                                <agencyName>peter</agencyName>
+                                                <copyrightHolder/>
+                                                <collection/>
+                                                <language>en</language>
+                                                <rights>http://rightsstatements.org/vocab/NoC-US/1.0/</rights>
+                                                <license for="data">http://opendatacommons.org/licenses/odbl/</license>
+                                                <license for="images">https://creativecommons.org/choose/mark/</license>
+                                                <owner/>
+                                                <repository/>
+                                        </template>
+                                        <includes/>
+                                        <installation_path>/usr/local/projects/numishare</installation_path>
+                                        <images>
+                                                <absolute_path>oxf:/numishare-images</absolute_path>
+                                                <iiif_server/>
+                                                <thumbnail>120</thumbnail>
+                                                <reference>400</reference>
+                                        </images>
+                                        <languages>
+                                                <language code="ar" enabled="false" rtl="true"/>
+                                                <language code="bg" enabled="false"/>
+                                                <language code="da" enabled="false"/>
+                                                <language code="de" enabled="false"/>
+                                                <language code="el" enabled="false"/>
+                                                <language code="en" enabled="false"/>
+                                                <language code="es" enabled="false"/>
+                                                <language code="fr" enabled="false"/>
+                                                <language code="he" enabled="false" rtl="true"/>
+                                                <language code="hu" enabled="false"/>
+                                                <language code="it" enabled="false"/>
+                                                <language code="nl" enabled="false"/>
+                                                <language code="pl" enabled="false"/>
+                                                <language code="ro" enabled="false"/>
+                                                <language code="ru" enabled="false"/>
+                                                <language code="sv" enabled="false"/>
+                                                <language code="tr" enabled="false"/>
+                                                <language code="uk" enabled="false"/>
+                                                <language code="ur" enabled="false" rtl="true"/>
+                                        </languages>
+                                        <positions/>
+                                        <localTypes/>
+                                        <facets>
+                                                <facet>artist_facet</facet>
+                                                <facet>authority_facet</facet>
+                                                <facet>citation_facet</facet>
+                                                <facet>coinType_facet</facet>
+                                                <facet>collection_facet</facet>
+                                                <facet>degree_facet</facet>
+                                                <facet>deity_facet</facet>
+                                                <facet>denomination_facet</facet>
+                                                <facet>department_facet</facet>
+                                                <facet>engraver_facet</facet>
+                                                <facet>era_facet</facet>
+                                                <facet>findspot_facet</facet>
+                                                <facet>issuer_facet</facet>
+                                                <facet>maker_facet</facet>
+                                                <facet>manufacture_facet</facet>
+                                                <facet>material_facet</facet>
+                                                <facet>mint_facet</facet>
+                                                <facet>objectType_facet</facet>
+                                                <facet>portrait_facet</facet>
+                                                <facet>reference_facet</facet>
+                                                <facet>region_facet</facet>
+                                                <facet>script_facet</facet>
+                                                <facet>state_facet</facet>
+                                                <facet>subject_facet</facet>
+                                        </facets>
+                                        <hoard_options>
+                                                <display_stub>authority,mint,date</display_stub>
+                                        </hoard_options>
+                                        <theme>
+                                                <orbeon_theme>default</orbeon_theme>
+                                                <themes_url>http://localhost:8081/orbeon/themes/</themes_url>
+                                                <layouts>
+                                                        <results>
+                                                                <image_location>right</image_location>
+                                                        </results>
+                                                        <display>
+                                                                <nuds>
+                                                                        <orientation>vertical</orientation>
+                                                                        <image_location>left</image_location>
+                                                                </nuds>
+                                                        </display>
+                                                </layouts>
+                                        </theme>
+                                        <footer>
+                                                <div class="row">
+                                                        <div class="col-md-12">
+                                                                <p>Powered by <a href="https://github.com/ewg118/numishare" target="_blank">Numishare</a>
+                </p>
+                                                        </div>
+                                                </div>
+                                        </footer>
+                                        <pages>
+                                                <index>
+                                                        <p>
+                                                                <a href="https://github.com/ewg118/numishare/">Numishare</a> is a free, open source, modularized system of Tomcat applications
+                                                                for the web delivery of cultural heritage artifacts, with particular focus on coins and medals. Metadata are edited with XForms
+                                                                and delivered with <a href="http://www.orbeon.com">Orbeon</a>, <a href="http://exist-db.org/exist/apps/homepage/index.html">eXist-db</a>, and <a href="http://lucene.apache.org/solr/">Apache Solr</a>.</p>
+                                                </index>
+                                                <compare enabled="true"/>
+                                                <analyze enabled="false"/>
+                                                <visualize enabled="true"/>
+                                                <apis enabled="true"/>
+                                                <feedback enabled="false">
+                                                        <smtp-host>localhost</smtp-host>
+                                                        <to type="">
+                                                                <email/>
+                                                                <name/>
+                                                        </to>
+                                                        <recipient-types>
+                                                                <type>curatorial</type>
+                                                                <type>technical</type>
+                                                        </recipient-types>
+                                                        <feedback-types>
+                                                                <type type="curatorial">Cataloging error</type>
+                                                                <type type="curatorial|technical">Comment or suggestion</type>
+                                                                <type type="technical">Interface bug</type>
+                                                                <type type="curatorial">Other</type>
+                                                        </feedback-types>
+                                                        <iframe-url>feedback-form</iframe-url>
+                                                </feedback>
+                                                <symbols enabled="false"/>
+                                                <identify enabled="false"/>
+                                        </pages>
+                                        <navigation>
+                                                <tab href="results" id="browse"/>
+                                                <tab href="search" id="search"/>
+                                                <tab href="maps" id="maps"/>
+                                                <tab href="symbols" id="symbols"/>
+                                                <tab href="identify" id="identify" label="Identify a Coin"/>
+                                                <tab href="contributors" id="contributors"/>
+                                                <tab href="compare" id="compare"/>
+                                                <tab href="analyze" id="analyze"/>
+                                                <tab href="visualize" id="visualize"/>
+                                                <tab href="feedback" id="feedback"/>
+                                                <tab href="apis" id="apis" label="APIs"/>
+                                                <tab id="pages"/>
+                                                <tab id="languages-tab"/>
+                                        </navigation>
+                                </config>

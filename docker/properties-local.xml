@@ -2,6 +2,6 @@
     <property as="xs:anyURI" name="oxf.epilogue.theme" value="oxf:/config/theme-plain.xsl"/>
     <property as="xs:string" name="oxf.fr.authentication.method" value="container"/>
     <property as="xs:string" name="oxf.fr.authentication.container.roles" value="other-project-roles numishare-admin"/>
-    <property as="xs:anyURI" name="oxf.fr.persistence.exist.uri" value="http://localhost:8080/exist/rest/db/"/>
+    <property as="xs:anyURI" name="oxf.fr.persistence.exist.uri" value="http://exist:8080/exist/rest/db/"/>
     <property as="xs:boolean" name="oxf.epilogue.xforms.inspector" value="true"/>
 </properties>

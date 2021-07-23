@@ -22,7 +22,7 @@
 			if (string(//config/theme/themes_url)) then
 				concat(//config/theme/themes_url, //config/theme/orbeon_theme)
 			else
-				concat('http://', doc('input:request')/request/server-name, ':8080/orbeon/themes/', //config/theme/orbeon_theme)"/>
+				concat('http://', doc('input:request')/request/server-name, ':8081/orbeon/themes/', //config/theme/orbeon_theme)"/>
 
 	<xsl:template match="/config">
 		<html>

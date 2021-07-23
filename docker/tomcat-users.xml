@@ -37,7 +37,12 @@
 
 <role rolename="numishare-admin"/>
 <role rolename="numishare-user"/>
+<role rolename="tokens-project" />
 <role rolename="orbeon-user"/>
-  <user name="admin" password="" roles="numishare-admin,numishare-user,orbeon-user" />
-  <user name="user"   password="" roles="numishare-user,orbeon-user" />
+<user username="admin" password="" roles="numishare-admin" />
+<user username="user"   password="" roles="numishare-user,orbeon-user,tokens-project" />
+<user username="test1" password="" roles="tokens-project" />
 </tomcat-users>
+
+
+  

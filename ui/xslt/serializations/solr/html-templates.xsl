@@ -35,7 +35,7 @@
 					</a>
 					<xsl:if test="$authenticated = true()">
 						<xsl:variable name="adminURL"
-							select="concat(doc('input:request')/request/scheme, '://', doc('input:request')/request/server-name, ':8080/orbeon/numishare/admin/')"/>
+							select="concat(doc('input:request')/request/scheme, '://', doc('input:request')/request/server-name, ':8081/orbeon/numishare/admin/')"/>
 						<small>
 							<a href="{$adminURL}edit/coin/?id={str[@name='recordId']}" title="Edit Record" style="margin-left:5px">
 								<span class="glyphicon glyphicon-pencil"/>
@@ -83,7 +83,7 @@
 				</a>
 				<xsl:if test="$authenticated = true()">
 					<xsl:variable name="adminURL"
-						select="concat(doc('input:request')/request/scheme, '://', doc('input:request')/request/server-name, ':8080/orbeon/numishare/admin/')"/>
+						select="concat(doc('input:request')/request/scheme, '://', doc('input:request')/request/server-name, ':8081/orbeon/numishare/admin/')"/>
 					<small>
 						<a href="{$adminURL}edit/coin/?id={str[@name='recordId']}" title="Edit Record" style="margin-left:5px">
 							<span class="glyphicon glyphicon-pencil"/>

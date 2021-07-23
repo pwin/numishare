@@ -118,7 +118,15 @@
 
 			<!-- send commit -->
 			<xforms:submission id="submitCommit" action="{instance('config')/solr_published}update" ref="instance('sendCommit')" instance="sendCommit" replace="none" method="post">
-				<xforms:message ev:event="xforms-submit-error" level="modal">Data Failed to POST to Solr!</xforms:message>
+				<!-- xforms:message ev:event="xforms-submit-error" level="modal">Data Failed to POST to Solr!</xforms:message -->
+				<xforms:message ev:event="xforms-submit-error" level="modal">
+                                   Submission error: Data Failed to POST to Solr.  [manage imports]
+                                      error-type: <xforms:output value="event('error-type')"/>
+                                      error-message: <xforms:output value="event('error-message')"/>
+                                      resource-uri: <xforms:output value="event('resource-uri')"/>
+                                      response-status-code: <xforms:output value="event('response-status-code')"/>
+                                      response-reason-phrase: <xforms:output value="event('response-reason-phrase')"/>
+                                  </xforms:message>
 				<xforms:send submission="optimize" ev:event="xforms-submit-done"/>
 			</xforms:submission>
 

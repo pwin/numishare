@@ -17,7 +17,7 @@
 			concat('http://localhost:', if (//config/server-port castable as xs:integer) then
 				//config/server-port
 			else
-				'8080', substring-before(doc('input:request')/request/request-uri, 'id/'))"/>
+				'8081', substring-before(doc('input:request')/request/request-uri, 'id/'))"/>
 	<xsl:param name="langParam" select="doc('input:request')/request/parameters/parameter[name = 'lang']/value"/>
 	<xsl:param name="lang">
 		<xsl:choose>
@@ -37,7 +37,7 @@
 			if (string(//config/theme/themes_url)) then
 				concat(//config/theme/themes_url, //config/theme/orbeon_theme)
 			else
-				concat('http://', doc('input:request')/request/server-name, ':8080/orbeon/themes/', //config/theme/orbeon_theme)"/>
+				concat('http://', doc('input:request')/request/server-name, ':8081/orbeon/themes/', //config/theme/orbeon_theme)"/>
 
 	<!-- variables -->
 	<xsl:variable name="objectUri" select="//rdf:RDF/*[1]/@rdf:about"/>

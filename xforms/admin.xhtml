@@ -53,12 +53,12 @@
                                         <description>A short description of the collection.</description>
                                         <logo/>
                                         <url>http://localhost:8081/orbeon/numishare/</url>
-                                        <server-port>8080</server-port>
+                                        <server-port>8081</server-port>
                                         <sparql_endpoint>http://localhost:3030/numishare/sparql</sparql_endpoint>
                                         <annotation_sparql_endpoint/>
                                         <type_series/>
                                         <specimens_per_page>48</specimens_per_page>
-                                        <solr_published>http://localhost:8983/solr/numishare-published/</solr_published>
+                                        <solr_published>http://solr:8983/solr/numishare-published/</solr_published>
                                         <geonames_api_key/>
                                         <mapboxKey/>
                                         <contact/>
@@ -683,8 +683,18 @@
                         <!-- post instance to Solr -->
                         <xforms:submission id="post-solr-doc" resource="{instance('config')/solr_published}update" ref="instance('addIndex')" instance="addIndex"
                                 replace="instance" method="post">
-                                <xforms:message ev:event="xforms-submit-error" level="modal">Data Failed to POST to Solr. Index may be offline or URL is
-                                        incorrect.</xforms:message>
+                        <!-- xforms:message ev:event="xforms-submit-error" level="modal">Data Failed to POST to Solr. Index may be offline or URL is incorrect.</xforms:message -->
+
+                        <xforms:message ev:event="xforms-submit-error" level="modal">
+                                   Submission error:  Data Failed to POST to Solr. Index may be offline or URL is incorrect. [admin]
+                                      error-type: <xforms:output value="event('error-type')"/>
+                                      error-message: <xforms:output value="event('error-message')"/>
+                                      resource-uri: <xforms:output value="event('resource-uri')"/>
+                                      response-status-code: <xforms:output value="event('response-status-code')"/>
+                                      response-reason-phrase: <xforms:output value="event('response-reason-phrase')"/>
+                                  </xforms:message>
+
+
                                 <xforms:setvalue ev:event="xforms-submit-done" ref="instance('control-instance')/status">Successfully published to Solr.</xforms:setvalue>
                         </xforms:submission>
 

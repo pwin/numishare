@@ -1,4 +1,4 @@
-<Context path="/orbeon" docBase="../../../webapps/orbeon">
+<Context path="/orbeon" docBase="orbeon">
     <!-- see https://github.com/ewg118/numishare/issues/103 -->
     <Resources allowLinking="true" />
     <Valve className="org.apache.catalina.authenticator.BasicAuthenticator" changeSessionIdOnAuthentication="false"/>

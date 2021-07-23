@@ -15,7 +15,7 @@
 			concat('http://localhost:', if (//config/server-port castable as xs:integer) then
 				//config/server-port
 			else
-				'8080', substring-before(doc('input:request')/request/request-uri, 'get_hier'))"/>
+				'8081', substring-before(doc('input:request')/request/request-uri, 'get_hier'))"/>
 
 
 	<!-- solr query parameters -->

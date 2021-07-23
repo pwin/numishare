@@ -16,7 +16,7 @@
 	<xsl:include href="solr-templates.xsl"/>
 
 	<xsl:variable name="collection-name" select="substring-before(substring-after(doc('input:request')/request/request-uri, 'numishare/'), '/')"/>
-	<xsl:variable name="request-uri" select="concat('http://localhost:8080/orbeon/numishare/', $collection-name)"/>
+	<xsl:variable name="request-uri" select="concat('http://localhost:8081/orbeon/numishare/', $collection-name)"/>
 
 	<!-- config variables -->
 	<xsl:variable name="geonames-url">http://api.geonames.org</xsl:variable>

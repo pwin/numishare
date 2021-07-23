@@ -14,7 +14,7 @@ DIRECTIONS: edit the $format, $searchUrl, and $q variables and execute the PHP s
  * $sort = sort field and direction, 'timestamp+desc' default.  this will not have to be changed under most circumstances
  ************************/
 $format = 'xml';
-$searchUrl = 'http://localhost:8080/orbeon/numishare/apis/search';
+$searchUrl = 'http://localhost:8081/orbeon/numishare/apis/search';
 $q = '*:*';
 $sort = 'timestamp desc';
 $feed = "{$searchUrl}?q={$q}&sort={$sort}&format=atom";
