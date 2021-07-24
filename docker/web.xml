@@ -394,4 +394,8 @@
     <session-config>
         <session-timeout>720</session-timeout>
     </session-config>
+    <context-param>
+      <param-name>oxf.run-mode</param-name>
+      <param-value>prod</param-value>
+    </context-param>
 </web-app>
