@@ -58,7 +58,7 @@
                                         <annotation_sparql_endpoint/>
                                         <type_series/>
                                         <specimens_per_page>48</specimens_per_page>
-                                        <solr_published>http://solr:8983/solr/numishare-published/</solr_published>
+                                        <solr_published>http://solr:8983/solr/numishare/</solr_published>
                                         <geonames_api_key/>
                                         <mapboxKey/>
                                         <contact/>
@@ -319,7 +319,7 @@
                                                         let $path := '%PATH%'
                                                         let $create-collection := xmldb:create-collection($collection, 'objects')
                                                         let $create-symbols := xmldb:create-collection($collection, 'symbols')
-                                                        let $store-xql := xmldb:store-files-from-pattern($collection, concat($path, '/xforms/xquery'), '*.xql', 'application/xquery')
+                                                        let $store-xql := xmldb:store-files-from-pattern($collection, concat($path, '/xforms/xquery'), '*.xq*', 'application/xquery')
                                                         for $doc in xmldb:get-child-resources($collection)
                                                         return sm:chmod(xs:anyURI(concat($collection, '/', $doc)), 'rwxrwxrwx')
                                                 ]]>

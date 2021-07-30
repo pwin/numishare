@@ -377,6 +377,8 @@
     <!-- Default security role, which can be changed as needed -->
     <security-role>
         <role-name>orbeon-user</role-name>
+        <role-name>numishare-admin</role-name>
+        <role-name>other-project-roles</role-name>        
     </security-role>
     <security-constraint>
         <web-resource-collection>

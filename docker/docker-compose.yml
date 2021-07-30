@@ -6,7 +6,7 @@ services:
     ports:
       - "8081:8020"
     volumes:
-      - "./orbeon.xml:/usr/local/tomcat/conf/Catalina/localhost/ROOT.xml"      
+#      - "./orbeon.xml:/usr/local/tomcat/conf/Catalina/localhost/ROOT.xml"      
       - "..:/usr/local/projects/numishare"   
       - "..:/usr/local/tomcat/webapps/orbeon/WEB-INF/resources/apps/numishare"
       - "./exist-config.xml:/usr/local/tomcat/webapps/orbeon/WEB-INF/resources/apps/numishare/exist-config.xml"
@@ -22,9 +22,9 @@ services:
     volumes:
       - data:/var/solr
       - "../solr-home/1.6:/var/solr/data/numishare"
-    command:
-      - solr-precreate
-      - numishare-published
+#    command:
+#      - solr-precreate
+#      - numishare-published
 
   exist:
     image: existdb/existdb:latest

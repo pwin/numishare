@@ -164,6 +164,12 @@
         <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs"
                prefix="localhost_access_log" suffix=".txt"
                pattern="%h %l %u %t &quot;%r&quot; %s %b" />
+        
+<Context path="/orbeon" docBase="orbeon">
+    <!-- see https://github.com/ewg118/numishare/issues/103 -->
+    <Resources allowLinking="true" />
+    <Valve className="org.apache.catalina.authenticator.BasicAuthenticator" changeSessionIdOnAuthentication="false"/>
+</Context>
 
       </Host>
     </Engine>
