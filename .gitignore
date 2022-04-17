@@ -1,3 +1,4 @@
 core.properties
 solr-home/*/data
 initial_data_loading/*
+numishare_data/*

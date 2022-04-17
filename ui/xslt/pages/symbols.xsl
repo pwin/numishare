@@ -53,7 +53,7 @@
 			if (string(//config/theme/themes_url)) then
 				concat(//config/theme/themes_url, //config/theme/orbeon_theme)
 			else
-				concat('http://', doc('input:request')/request/server-name, ':8080/orbeon/themes/', //config/theme/orbeon_theme)"/>
+				concat('http://', doc('input:request')/request/server-name, ':8081/orbeon/themes/', //config/theme/orbeon_theme)"/>
 
 	<!-- config variables-->
 	<xsl:variable name="collection_type" select="//config/collection_type"/>
@@ -68,7 +68,7 @@
 					<xsl:value-of select="numishare:normalizeLabel('header_symbols', $lang)"/>
 				</title>
 				<meta name="viewport" content="width=device-width, initial-scale=1"/>
-				<link rel="shortcut icon" type="image/x-icon" href="{$include_path}/images/{if (string(//config/favicon)) then //config/favicon else 'favicon.png'}"/>
+				<link rel="shortcut icon" type="image/x-icon" href="{$include_path}/images/favicon.png"/>
 
 				<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"/>
 				<link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>

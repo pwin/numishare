@@ -189,7 +189,7 @@
                     <xsl:when test="$label='contents'">Inhalt</xsl:when>
                     <xsl:when test="$label='coordinates'">Koordinaten</xsl:when>
                     <xsl:when test="$label='countermark'">Gegenstempel</xsl:when>
-                    <xsl:when test="$label='date'">Datierung</xsl:when>
+                    <xsl:when test="$label='date'">Datum</xsl:when>
                     <xsl:when test="$label='dateOnObject'">Datum auf Gegenstand</xsl:when>
                     <xsl:when test="$label='dob'">Datum auf Gegenstand</xsl:when>
                     <xsl:when test="$label='dateRange'">Datierungsspanne</xsl:when>
@@ -213,7 +213,7 @@
                     <xsl:when test="$label='grade'">Grad</xsl:when>
                     <xsl:when test="$label='height'">Höhe</xsl:when>
                     <xsl:when test="$label='hoardDesc'">Schatzfundbeschreibung</xsl:when>
-                    <xsl:when test="$label='identifier'">Inventarnummer</xsl:when>
+                    <xsl:when test="$label='identifier'">Bestimmt von</xsl:when>
                     <xsl:when test="$label='issuer'">Herausgeber</xsl:when>
                     <xsl:when test="$label='landowner'">Grundstückseigentümer</xsl:when>
                     <xsl:when test="$label='legend'">Legende</xsl:when>
@@ -247,7 +247,7 @@
                     <xsl:when test="$label='saleItem'">Auktionslot</xsl:when>
                     <xsl:when test="$label='salePrice'">Verkaufspreis</xsl:when>
                     <xsl:when test="$label='shape'">Form</xsl:when>
-                    <xsl:when test="$label='state'">Münzherrschaft</xsl:when>
+                    <xsl:when test="$label='state'">Staat</xsl:when>
                     <xsl:when test="$label='subject'">Subjekt</xsl:when>
                     <xsl:when test="$label='subjectSet'">Subjekte</xsl:when>
                     <xsl:when test="$label='symbol'">Symbol</xsl:when>
@@ -1993,7 +1993,6 @@
                     <xsl:when test="$label='authorizingEntity'">Political/Dynastic Entity</xsl:when>
                     <xsl:when test="$label='axis'">Axis</xsl:when>
                     <xsl:when test="$label='century'">Century</xsl:when>
-                    <xsl:when test="$label='chemicalAnalysis'">Chemical Analysis</xsl:when>
                     <xsl:when test="$label='chronList'">Chronological List</xsl:when>
                     <xsl:when test="$label='chronItem'">Chronological Item</xsl:when>
                     <xsl:when test="$label='closing_date'">Closing Date</xsl:when>
@@ -2025,7 +2024,6 @@
                     <xsl:when test="$label='edge'">Edge</xsl:when>
                     <xsl:when test="$label='era'">Era</xsl:when>
                     <xsl:when test="$label='finder'">Finder</xsl:when>
-                    <xsl:when test="$label='findspotDesc'">Findspot Description</xsl:when>
                     <xsl:when test="$label='findspot'">Findspot</xsl:when>
                     <xsl:when test="$label='fromDate'">From Date</xsl:when>
                     <xsl:when test="$label='geographic'">Geographic</xsl:when>
@@ -2069,7 +2067,6 @@
                     <xsl:when test="$label='saleItem'">Sale Item</xsl:when>
                     <xsl:when test="$label='salePrice'">Sale Price</xsl:when>
                     <xsl:when test="$label='shape'">Shape</xsl:when>
-                    <xsl:when test="$label='specificGravity'">Specific Gravity</xsl:when>                    
                     <xsl:when test="$label='state'">State</xsl:when>
                     <xsl:when test="$label='statedAuthority'">Stated Authority</xsl:when>
                     <xsl:when test="$label='subject'">Subject</xsl:when>

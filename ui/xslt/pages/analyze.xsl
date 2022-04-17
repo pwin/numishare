@@ -15,7 +15,7 @@
 			if (string(//config/theme/themes_url)) then
 				concat(//config/theme/themes_url, //config/theme/orbeon_theme)
 			else
-				concat('http://', doc('input:request')/request/server-name, ':8080/orbeon/themes/', //config/theme/orbeon_theme)"/>
+				concat('http://', doc('input:request')/request/server-name, ':8081/orbeon/themes/', //config/theme/orbeon_theme)"/>
 
 	<!-- request parameters -->
 	<xsl:param name="request-uri"
@@ -23,7 +23,7 @@
 			concat('http://localhost:', if (//config/server-port castable as xs:integer) then
 				//config/server-port
 			else
-				'8080', substring-before(doc('input:request')/request/request-uri, 'analyze'))"/>
+				'8081', substring-before(doc('input:request')/request/request-uri, 'analyze'))"/>
 	<xsl:param name="langParam" select="doc('input:request')/request/parameters/parameter[name = 'lang']/value"/>
 	<xsl:param name="lang">
 		<xsl:choose>
@@ -64,7 +64,7 @@
 					<xsl:text>: </xsl:text>
 					<xsl:value-of select="numishare:normalizeLabel('header_analyze', $lang)"/>
 				</title>
-				<link rel="shortcut icon" type="image/x-icon" href="{$include_path}/images/{if (string(//config/favicon)) then //config/favicon else 'favicon.png'}"/>
+				<link rel="shortcut icon" type="image/x-icon" href="{$include_path}/images/favicon.png"/>
 				<meta name="viewport" content="width=device-width, initial-scale=1"/>
 				<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"/>
 
@@ -84,8 +84,8 @@
 				<script src="https://netdna.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"/>
 				
 				<!-- analysis scripts -->
-				<script type="text/javascript" src="{$include_path}/javascript/d3.min.js"/>
-				<script type="text/javascript" src="{$include_path}/javascript/d3plus-plot.min.js"/>
+				<script type="text/javascript" src="https://d3plus.org/js/d3.min.js"/>
+				<script type="text/javascript" src="https://d3plus.org/js/d3plus-plot.v0.9.full.min.js"/>
 				<script type="text/javascript" src="{$include_path}/javascript/hoard_analysis_functions.js"/>				
 				<script type="text/javascript" src="{$include_path}/javascript/search_functions.js"/>
 				

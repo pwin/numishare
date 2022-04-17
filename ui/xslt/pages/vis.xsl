@@ -34,7 +34,7 @@
 			if (string(//config/theme/themes_url)) then
 				concat(//config/theme/themes_url, //config/theme/orbeon_theme)
 			else
-				concat('http://', doc('input:request')/request/server-name, ':8080/orbeon/themes/', //config/theme/orbeon_theme)"/>
+				concat('http://', doc('input:request')/request/server-name, ':8081/orbeon/themes/', //config/theme/orbeon_theme)"/>
 
 	<xsl:variable name="mode">page</xsl:variable>
 
@@ -51,7 +51,7 @@
 						<xsl:when test="$interface = 'metrical'">Metrical Analysis</xsl:when>
 					</xsl:choose>
 				</title>
-				<link rel="shortcut icon" type="image/x-icon" href="{$include_path}/images/{if (string(//config/favicon)) then //config/favicon else 'favicon.png'}"/>
+				<link rel="shortcut icon" type="image/x-icon" href="{$include_path}/images/favicon.png"/>
 				<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"/>
 
 				<xsl:for-each select="//config/includes/include">
@@ -71,8 +71,8 @@
 				<link rel="stylesheet" type="text/css" href="{$include_path}/css/style.css"/>
 
 				<!-- visualization libraries -->
-				<script type="text/javascript" src="{$include_path}/javascript/d3.min.js"/>
-				<script type="text/javascript" src="{$include_path}/javascript/d3plus-plot.full.min.js"/>
+				<script type="text/javascript" src="https://d3plus.org/js/d3.min.js"/>
+				<script type="text/javascript" src="https://d3plus.org/js/d3plus-plot.v0.9.full.min.js"/>
 				<script type="text/javascript" src="{$include_path}/javascript/vis_functions.js"/>
 
 				<!-- google analytics -->

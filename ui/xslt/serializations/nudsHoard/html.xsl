@@ -19,7 +19,7 @@
 			concat('http://localhost:', if (//config/server-port castable as xs:integer) then
 				//config/server-port
 			else
-				'8080', substring-before(doc('input:request')/request/request-uri, 'id/'))"/>
+				'8081', substring-before(doc('input:request')/request/request-uri, 'id/'))"/>
 	<xsl:param name="langParam" select="doc('input:request')/request/parameters/parameter[name = 'lang']/value"/>
 	<xsl:param name="lang">
 		<xsl:choose>
@@ -80,7 +80,7 @@
 			if (string(//config/theme/themes_url)) then
 				concat(//config/theme/themes_url, //config/theme/orbeon_theme)
 			else
-				concat('http://', doc('input:request')/request/server-name, ':8080/orbeon/themes/', //config/theme/orbeon_theme)"/>
+				concat('http://', doc('input:request')/request/server-name, ':8081/orbeon/themes/', //config/theme/orbeon_theme)"/>
 	<xsl:variable name="recordType">hoard</xsl:variable>
 	<xsl:variable name="id" select="normalize-space(//*[local-name() = 'recordId'])"/>
 	<xsl:variable name="objectUri"
@@ -298,8 +298,8 @@
 				</xsl:if>
 
 				<!-- visualization -->
-				<script type="text/javascript" src="{$include_path}/javascript/d3.min.js"/>
-				<script type="text/javascript" src="{$include_path}/javascript/d3plus-plot.full.min.js"/>
+				<script type="text/javascript" src="https://d3plus.org/js/d3.min.js"/>
+				<script type="text/javascript" src="https://d3plus.org/js/d3plus-plot.v0.9.full.min.js"/>
 				<script type="text/javascript" src="{$include_path}/javascript/display_hoard_functions.js"/>
 				<script type="text/javascript" src="{$include_path}/javascript/hoard_analysis_functions.js"/>
 				<script type="text/javascript" src="{$include_path}/javascript/search_functions.js"/>

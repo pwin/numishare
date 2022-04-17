@@ -357,10 +357,8 @@
 								<nmo:hasReverse rdf:resource="{if (string($uri_space)) then concat($uri_space, $id) else concat($url, 'id/', $id)}#reverse"/>
 							</xsl:if>
 							
-							<!-- look for combined images / treat the recto of the first card image the same -->
-							<xsl:apply-templates select="nuds:digRep/mets:fileSec/mets:fileGrp[@USE = 'combined'] | nuds:digRep/mets:fileSec/mets:fileGrp[@USE = 'card'][1]/mets:fileGrp[@USE = 'recto']"/>			
-							
-							
+							<!-- look for combined images -->
+							<xsl:apply-templates select="nuds:digRep/mets:fileSec/mets:fileGrp[@USE = 'combined']"/>			
 							
 							<void:inDataset rdf:resource="{$url}"/>
 						</xsl:element>
@@ -369,18 +367,26 @@
 						<xsl:apply-templates select="nuds:digRep/mets:fileSec" mode="nomisma">
 							<xsl:with-param name="id" select="$id"/>
 						</xsl:apply-templates>
-						
-						<!-- IIIF images for card -->
-						<xsl:apply-templates select="nuds:digRep/mets:fileSec/mets:fileGrp[@USE = 'card'][1]/mets:fileGrp[@USE = 'recto']/mets:file[@USE = 'iiif']">
-							<xsl:with-param name="reference" select="nuds:digRep/mets:fileSec/mets:fileGrp[@USE = 'card'][1]/mets:fileGrp[@USE = 'recto']/mets:file[@USE = 'reference']/mets:FLocat/@xlink:href"/>
-						</xsl:apply-templates>
+
+						<!-- findspot object -->
+						<xsl:if test="nuds:descMeta/nuds:findspotDesc/nuds:findspot[gml:location]">
+							<xsl:apply-templates select="nuds:descMeta/nuds:findspotDesc/nuds:findspot[gml:location]" mode="nomisma-object">
+								<xsl:with-param name="objectURI"
+									select="
+										if (string($uri_space)) then
+											concat($uri_space, $id)
+										else
+											concat($url, 'id/', $id)"
+								/>
+							</xsl:apply-templates>
+						</xsl:if>
 					</xsl:when>
 				</xsl:choose>
 			</xsl:otherwise>
 		</xsl:choose>
 	</xsl:template>
 	
-	<xsl:template match="mets:fileGrp[@USE = 'combined'] | mets:fileGrp[@USE = 'recto']">
+	<xsl:template match="mets:fileGrp[@USE = 'combined']">
 		<xsl:for-each select="mets:file">
 			<xsl:choose>
 				<xsl:when test="@USE = 'thumbnail'">
@@ -409,8 +415,6 @@
 								</xsl:otherwise>
 							</xsl:choose>
 						</xsl:attribute>
-						
-						
 					</foaf:depiction>
 				</xsl:when>
 			</xsl:choose>
@@ -523,7 +527,7 @@
 		<xsl:apply-templates
 			select="nuds:geographic/nuds:geogname[@xlink:href] | nuds:authority/nuds:persname[@xlink:href] | nuds:authority/nuds:corpname[@xlink:href]"
 			mode="nomisma"/>
-		<xsl:apply-templates select="nuds:date[@standardDate] | nuds:date[@notBefore and @notAfter] | nuds:dateRange[child::node()/@standardDate]" mode="nomisma"/>
+		<xsl:apply-templates select="nuds:date[@standardDate] | nuds:dateRange[child::node()/@standardDate]" mode="nomisma"/>
 		<xsl:if test="nuds:obverse">
 			<nmo:hasObverse rdf:resource="{if (string($uri_space)) then concat($uri_space, $id) else concat($url, 'id/', $id)}#obverse"/>
 		</xsl:if>
@@ -666,24 +670,12 @@
 	</xsl:template>
 
 	<xsl:template match="nuds:date" mode="nomisma">
-		<xsl:choose>
-			<xsl:when test="@standardDate">
-				<nmo:hasStartDate rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">
-					<xsl:value-of select="@standardDate"/>
-				</nmo:hasStartDate>
-				<nmo:hasEndDate rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">
-					<xsl:value-of select="@standardDate"/>
-				</nmo:hasEndDate>
-			</xsl:when>
-			<xsl:when test="@notBefore and @notAfter">
-				<nmo:hasStartDate rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">
-					<xsl:value-of select="@notBefore"/>
-				</nmo:hasStartDate>
-				<nmo:hasEndDate rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">
-					<xsl:value-of select="@notAfter"/>
-				</nmo:hasEndDate>
-			</xsl:when>
-		</xsl:choose>
+		<nmo:hasStartDate rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">
+			<xsl:value-of select="@standardDate"/>
+		</nmo:hasStartDate>
+		<nmo:hasEndDate rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">
+			<xsl:value-of select="@standardDate"/>
+		</nmo:hasEndDate>
 	</xsl:template>
 
 	<xsl:template match="nuds:dateRange" mode="nomisma">
@@ -704,11 +696,8 @@
 				<!-- if the @xlink:href is in the findspotDesc, this is presumed to be the hoard -->
 				<dcterms:isPartOf rdf:resource="{@xlink:href}"/>
 			</xsl:when>
-			<xsl:when test="nuds:hoard/@xlink:href">
-				<dcterms:isPartOf rdf:resource="{nuds:hoard/@xlink:href}"/>
-			</xsl:when>
 			<xsl:otherwise>
-				<xsl:apply-templates select="nuds:findspot[nuds:fallsWithin/nuds:geogname[@xlink:href]]" mode="nomisma">
+				<xsl:apply-templates select="nuds:findspot" mode="nomisma">
 					<xsl:with-param name="objectURI" select="$objectURI"/>
 				</xsl:apply-templates>
 			</xsl:otherwise>
@@ -719,33 +708,14 @@
 	<xsl:template match="nuds:findspot" mode="nomisma">
 		<xsl:param name="objectURI"/>
 
-		<nmo:hasFindspot>
-			<nmo:Find>
-				<crm:P7_took_place_at>
-					<crm:E53_Place>
-						<xsl:choose>
-							<xsl:when test="nuds:description">
-								<xsl:for-each select="nuds:description">
-									<rdfs:label>
-										<xsl:attribute name="xml:lang" select="@xml:lang"/>
-										<xsl:value-of select="."/>
-									</rdfs:label>
-								</xsl:for-each>
-							</xsl:when>
-							<xsl:when test="nuds:fallsWithin/nuds:geogname[@xlink:role = 'findspot']">
-								<rdfs:label xml:lang="en">
-									<xsl:value-of select="nuds:fallsWithin/nuds:geogname[@xlink:role = 'findspot']"/>
-								</rdfs:label>
-							</xsl:when>
-						</xsl:choose>
-						
-						<xsl:for-each select="nuds:fallsWithin/nuds:geogname[@xlink:href]">
-							<crm:P89_falls_within rdf:resource="{@xlink:href}"/>
-						</xsl:for-each>
-					</crm:E53_Place>
-				</crm:P7_took_place_at>
-			</nmo:Find>
-		</nmo:hasFindspot>
+		<xsl:choose>
+			<xsl:when test="nuds:geogname/@xlink:href">
+				<nmo:hasFindspot rdf:resource="{nuds:geogname/@xlink:href}"/>
+			</xsl:when>
+			<xsl:otherwise>
+				<nmo:hasFindspot rdf:resource="{$objectURI}#findspot"/>
+			</xsl:otherwise>
+		</xsl:choose>
 	</xsl:template>
 
 	<xsl:template match="nuds:findspot" mode="nomisma-object">

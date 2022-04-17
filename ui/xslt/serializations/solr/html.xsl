@@ -7,7 +7,7 @@
 	<xsl:include href="../../ajax/numishareResults.xsl"/>
 
 	<xsl:variable name="display_path"/>
-	<xsl:variable name="include_path" select="if (string(//config/theme/themes_url)) then concat(//config/theme/themes_url, //config/theme/orbeon_theme) else concat('http://', doc('input:request')/request/server-name, ':8080/orbeon/themes/', //config/theme/orbeon_theme)"/>
+	<xsl:variable name="include_path" select="if (string(//config/theme/themes_url)) then concat(//config/theme/themes_url, //config/theme/orbeon_theme) else concat('http://', doc('input:request')/request/server-name, ':8081/orbeon/themes/', //config/theme/orbeon_theme)"/>
 	<!-- request params -->
 	<xsl:param name="pipeline">results</xsl:param>
 	<xsl:param name="langParam" select="doc('input:request')/request/parameters/parameter[name='lang']/value"/>
@@ -27,7 +27,7 @@
 	<xsl:param name="rows">20</xsl:param>
 	<xsl:param name="start" select="doc('input:request')/request/parameters/parameter[name='start']/value"/>
 	<xsl:param name="layout" select="doc('input:request')/request/parameters/parameter[name='layout']/value"/>
-	<xsl:variable name="request-uri" select="concat('http://localhost:', if (//config/server-port castable as xs:integer) then //config/server-port else '8080', substring-before(doc('input:request')/request/request-uri, 'results'))"/>
+	<xsl:variable name="request-uri" select="concat('http://localhost:', if (//config/server-port castable as xs:integer) then //config/server-port else '8081', substring-before(doc('input:request')/request/request-uri, 'results'))"/>
 	<xsl:variable name="collection-name" select="substring-before(substring-after(doc('input:request')/request/request-uri, 'numishare/'), '/')"/>
 	<xsl:variable name="role" select="/content/collections/collection[@name=$collection-name]/@role"/>
 	<xsl:variable name="authenticated" select="if (doc('input:auth')/request-security/role=$role or doc('input:auth')/request-security/role='numishare-admin') then true() else false()" as="xs:boolean"/>
@@ -91,7 +91,7 @@
 				<meta name="startIndex" content="{$start_var}"/>
 				<meta name="itemsPerPage" content="{$rows}"/>
 
-				<link rel="shortcut icon" type="image/x-icon" href="{$include_path}/images/{if (string(//config/favicon)) then //config/favicon else 'favicon.png'}"/>
+				<link rel="shortcut icon" type="image/x-icon" href="{$include_path}/images/favicon.png"/>
 				<meta name="viewport" content="width=device-width, initial-scale=1"/>
 
 				<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"/>

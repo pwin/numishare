@@ -22,7 +22,7 @@
 			concat('http://localhost:', if (//config/server-port castable as xs:integer) then
 				//config/server-port
 			else
-				'8080', substring-before(doc('input:request')/request/request-uri, 'apis/'))"/>
+				'8081', substring-before(doc('input:request')/request/request-uri, 'apis/'))"/>
 
 	<!-- config variables -->
 	<xsl:variable name="url" select="/content/config/url"/>
