@@ -35,13 +35,14 @@ services:
       - 8080:8080
       - 8443:8443
     volumes:
-      - "..:/usr/local/projects/numishare"       
-      - type: volume
-        source: data
-        target: /exist/webapp/WEB-INF/data
-      - type: volume
-        source: config
-        target: /exist/config
+      - "..:/usr/local/projects/numishare" 
+      - "../exist_data/data:/exist/initial_data"
+      # - type: volume
+      #   source: data
+      #   target: /exist/webapp/WEB-INF/data
+      # - type: volume
+      #   source: config
+      #   target: /exist/config
 
 
   fuseki:
@@ -54,8 +55,8 @@ services:
 
 #volumes:
 
-volumes:
-  data:
-    driver: local
-  config:
-    driver: local
+# volumes:
+#   data:
+#     driver: local
+#   config:
+#     driver: local

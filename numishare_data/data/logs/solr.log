@@ -1,54 +1,54 @@
-2022-04-17 15:20:07.803 INFO  (main) [   ] o.e.j.u.log Logging initialized @10391ms to org.eclipse.jetty.util.log.Slf4jLog
-2022-04-17 15:20:08.512 WARN  (main) [   ] o.e.j.x.XmlConfiguration Ignored arg: <Arg name="threadpool">
+2022-08-08 08:02:48.055 INFO  (main) [   ] o.e.j.u.log Logging initialized @29337ms to org.eclipse.jetty.util.log.Slf4jLog
+2022-08-08 08:02:50.539 WARN  (main) [   ] o.e.j.x.XmlConfiguration Ignored arg: <Arg name="threadpool">
     <New id="threadpool" class="com.codahale.metrics.jetty9.InstrumentedQueuedThreadPool"><Arg name="registry">
         <Call id="solrJettyMetricRegistry" name="getOrCreate" class="com.codahale.metrics.SharedMetricRegistries"><Arg>solr.jetty</Arg></Call>
       </Arg></New>
   </Arg>
-2022-04-17 15:20:09.447 INFO  (main) [   ] o.e.j.s.Server jetty-9.4.27.v20200227; built: 2020-02-27T18:37:21.340Z; git: a304fd9f351f337e7c0e2a7c28878dd536149c6c; jvm 11.0.14.1+1
-2022-04-17 15:20:09.595 INFO  (main) [   ] o.e.j.d.p.ScanningAppProvider Deployment monitor [file:///opt/solr-8.6.3/server/contexts/] at interval 0
-2022-04-17 15:20:11.763 INFO  (main) [   ] o.e.j.w.StandardDescriptorProcessor NO JSP Support for /solr, did not find org.apache.jasper.servlet.JspServlet
-2022-04-17 15:20:11.850 INFO  (main) [   ] o.e.j.s.session DefaultSessionIdManager workerName=node0
-2022-04-17 15:20:11.857 INFO  (main) [   ] o.e.j.s.session No SessionScavenger set, using defaults
-2022-04-17 15:20:11.866 INFO  (main) [   ] o.e.j.s.session node0 Scavenging every 660000ms
-2022-04-17 15:20:12.415 INFO  (main) [   ] o.a.s.s.SolrDispatchFilter Using logger factory org.apache.logging.slf4j.Log4jLoggerFactory
-2022-04-17 15:20:12.488 INFO  (main) [   ] o.a.s.s.SolrDispatchFilter  ___      _       Welcome to Apache Solr™ version 8.6.3
-2022-04-17 15:20:12.492 INFO  (main) [   ] o.a.s.s.SolrDispatchFilter / __| ___| |_ _   Starting in standalone mode on port 8983
-2022-04-17 15:20:12.492 INFO  (main) [   ] o.a.s.s.SolrDispatchFilter \__ \/ _ \ | '_|  Install dir: /opt/solr
-2022-04-17 15:20:12.499 INFO  (main) [   ] o.a.s.s.SolrDispatchFilter |___/\___/_|_|    Start time: 2022-04-17T15:20:12.499105Z
-2022-04-17 15:20:12.819 INFO  (main) [   ] o.a.s.c.SolrPaths Using system property solr.solr.home: /var/solr/data
-2022-04-17 15:20:12.853 INFO  (main) [   ] o.a.s.c.SolrXmlConfig Loading container configuration from /var/solr/data/solr.xml
-2022-04-17 15:20:13.706 INFO  (main) [   ] o.a.s.c.SolrXmlConfig MBean server found: com.sun.jmx.mbeanserver.JmxMBeanServer@402c4085, but no JMX reporters were configured - adding default JMX reporter.
-2022-04-17 15:20:18.655 INFO  (main) [   ] o.a.s.h.c.HttpShardHandlerFactory Host whitelist initialized: WhitelistHostChecker [whitelistHosts=null, whitelistHostCheckingEnabled=true]
-2022-04-17 15:20:19.848 WARN  (main) [   ] o.e.j.u.s.S.config Trusting all certificates configured for Client@1706a5c9[provider=null,keyStore=null,trustStore=null]
-2022-04-17 15:20:19.852 WARN  (main) [   ] o.e.j.u.s.S.config No Client EndPointIdentificationAlgorithm configured for Client@1706a5c9[provider=null,keyStore=null,trustStore=null]
-2022-04-17 15:20:21.210 WARN  (main) [   ] o.e.j.u.s.S.config Trusting all certificates configured for Client@764cba[provider=null,keyStore=null,trustStore=null]
-2022-04-17 15:20:21.219 WARN  (main) [   ] o.e.j.u.s.S.config No Client EndPointIdentificationAlgorithm configured for Client@764cba[provider=null,keyStore=null,trustStore=null]
-2022-04-17 15:20:21.658 WARN  (main) [   ] o.a.s.c.CoreContainer Not all security plugins configured!  authentication=disabled authorization=disabled.  Solr is only as secure as you make it. Consider configuring authentication/authorization before exposing Solr to users internal or external.  See https://s.apache.org/solrsecurity for more info
-2022-04-17 15:20:23.262 INFO  (main) [   ] o.a.s.c.TransientSolrCoreCacheDefault Allocating transient cache for 2147483647 transient cores
-2022-04-17 15:20:23.284 INFO  (main) [   ] o.a.s.h.a.MetricsHistoryHandler No .system collection, keeping metrics history in memory.
-2022-04-17 15:20:24.222 INFO  (main) [   ] o.a.s.m.r.SolrJmxReporter JMX monitoring for 'solr.node' (registry 'solr.node') enabled at server: com.sun.jmx.mbeanserver.JmxMBeanServer@402c4085
-2022-04-17 15:20:24.226 INFO  (main) [   ] o.a.s.m.r.SolrJmxReporter JMX monitoring for 'solr.jvm' (registry 'solr.jvm') enabled at server: com.sun.jmx.mbeanserver.JmxMBeanServer@402c4085
-2022-04-17 15:20:24.274 INFO  (main) [   ] o.a.s.m.r.SolrJmxReporter JMX monitoring for 'solr.jetty' (registry 'solr.jetty') enabled at server: com.sun.jmx.mbeanserver.JmxMBeanServer@402c4085
-2022-04-17 15:20:24.906 INFO  (main) [   ] o.a.s.c.CorePropertiesLocator Found 1 core definitions underneath /var/solr/data
-2022-04-17 15:20:24.907 INFO  (main) [   ] o.a.s.c.CorePropertiesLocator Cores are: [numishare-published]
-2022-04-17 15:20:26.255 INFO  (coreLoadExecutor-13-thread-1) [   x:numishare-published] o.a.s.c.SolrConfig Using Lucene MatchVersion: 8.6.3
-2022-04-17 15:20:26.527 INFO  (main) [   ] o.e.j.s.h.ContextHandler Started o.e.j.w.WebAppContext@62dae540{/solr,file:///opt/solr-8.6.3/server/solr-webapp/webapp/,AVAILABLE}{/opt/solr-8.6.3/server/solr-webapp/webapp}
-2022-04-17 15:20:26.689 INFO  (main) [   ] o.e.j.s.AbstractConnector Started ServerConnector@628c4ac0{HTTP/1.1, (http/1.1, h2c)}{0.0.0.0:8983}
-2022-04-17 15:20:26.716 INFO  (main) [   ] o.e.j.s.Server Started @29322ms
-2022-04-17 15:20:28.804 INFO  (coreLoadExecutor-13-thread-1) [   x:numishare-published] o.a.s.s.IndexSchema Schema name=default-config
-2022-04-17 15:20:37.158 INFO  (coreLoadExecutor-13-thread-1) [   x:numishare-published] o.a.s.s.IndexSchema Loaded schema default-config/1.6 with uniqueid field id
-2022-04-17 15:20:38.071 INFO  (coreLoadExecutor-13-thread-1) [   x:numishare-published] o.a.s.c.CoreContainer Creating SolrCore 'numishare-published' using configuration from instancedir /var/solr/data/numishare-published, trusted=true
-2022-04-17 15:20:38.220 INFO  (coreLoadExecutor-13-thread-1) [   x:numishare-published] o.a.s.m.r.SolrJmxReporter JMX monitoring for 'solr.core.numishare-published' (registry 'solr.core.numishare-published') enabled at server: com.sun.jmx.mbeanserver.JmxMBeanServer@402c4085
-2022-04-17 15:20:38.326 INFO  (coreLoadExecutor-13-thread-1) [   x:numishare-published] o.a.s.c.SolrCore [[numishare-published] ] Opening new SolrCore at [/var/solr/data/numishare-published], dataDir=[/var/solr/data/numishare-published/data/]
-2022-04-17 15:20:45.962 INFO  (coreLoadExecutor-13-thread-1) [   x:numishare-published] o.a.s.u.UpdateHandler Using UpdateLog implementation: org.apache.solr.update.UpdateLog
-2022-04-17 15:20:45.962 INFO  (coreLoadExecutor-13-thread-1) [   x:numishare-published] o.a.s.u.UpdateLog Initializing UpdateLog: dataDir= defaultSyncLevel=FLUSH numRecordsToKeep=100 maxNumLogsToKeep=10 numVersionBuckets=65536
-2022-04-17 15:20:46.071 INFO  (coreLoadExecutor-13-thread-1) [   x:numishare-published] o.a.s.u.CommitTracker Hard AutoCommit: if uncommitted for 15000ms; 
-2022-04-17 15:20:46.071 INFO  (coreLoadExecutor-13-thread-1) [   x:numishare-published] o.a.s.u.CommitTracker Soft AutoCommit: disabled
-2022-04-17 15:20:46.804 INFO  (coreLoadExecutor-13-thread-1) [   x:numishare-published] o.a.s.r.ManagedResourceStorage File-based storage initialized to use dir: /var/solr/data/numishare-published/conf
-2022-04-17 15:20:47.123 INFO  (coreLoadExecutor-13-thread-1) [   x:numishare-published] o.a.s.h.c.SpellCheckComponent Initializing spell checkers
-2022-04-17 15:20:47.175 INFO  (coreLoadExecutor-13-thread-1) [   x:numishare-published] o.a.s.s.DirectSolrSpellChecker init: {name=default,field=_text_,classname=solr.DirectSolrSpellChecker,distanceMeasure=internal,accuracy=0.5,maxEdits=2,minPrefix=1,maxInspections=5,minQueryLength=4,maxQueryFrequency=0.01}
-2022-04-17 15:20:47.279 INFO  (coreLoadExecutor-13-thread-1) [   x:numishare-published] o.a.s.h.ReplicationHandler Commits will be reserved for 10000 ms
-2022-04-17 15:20:47.323 INFO  (coreLoadExecutor-13-thread-1) [   x:numishare-published] o.a.s.u.UpdateLog Could not find max version in index or recent updates, using new clock 1730369392290562048
-2022-04-17 15:20:47.362 INFO  (searcherExecutor-15-thread-1-processing-x:numishare-published) [   x:numishare-published] o.a.s.c.QuerySenderListener QuerySenderListener done.
-2022-04-17 15:20:47.363 INFO  (searcherExecutor-15-thread-1-processing-x:numishare-published) [   x:numishare-published] o.a.s.h.c.SpellCheckComponent Loading spell index for spellchecker: default
-2022-04-17 15:20:47.454 INFO  (searcherExecutor-15-thread-1-processing-x:numishare-published) [   x:numishare-published] o.a.s.c.SolrCore [numishare-published]  Registered new searcher autowarm time: 0 ms
+2022-08-08 08:02:53.141 INFO  (main) [   ] o.e.j.s.Server jetty-9.4.27.v20200227; built: 2020-02-27T18:37:21.340Z; git: a304fd9f351f337e7c0e2a7c28878dd536149c6c; jvm 11.0.15+10
+2022-08-08 08:02:53.539 INFO  (main) [   ] o.e.j.d.p.ScanningAppProvider Deployment monitor [file:///opt/solr-8.6.3/server/contexts/] at interval 0
+2022-08-08 08:02:58.261 INFO  (main) [   ] o.e.j.w.StandardDescriptorProcessor NO JSP Support for /solr, did not find org.apache.jasper.servlet.JspServlet
+2022-08-08 08:02:58.568 INFO  (main) [   ] o.e.j.s.session DefaultSessionIdManager workerName=node0
+2022-08-08 08:02:58.568 INFO  (main) [   ] o.e.j.s.session No SessionScavenger set, using defaults
+2022-08-08 08:02:58.607 INFO  (main) [   ] o.e.j.s.session node0 Scavenging every 660000ms
+2022-08-08 08:02:59.550 INFO  (main) [   ] o.a.s.s.SolrDispatchFilter Using logger factory org.apache.logging.slf4j.Log4jLoggerFactory
+2022-08-08 08:02:59.638 INFO  (main) [   ] o.a.s.s.SolrDispatchFilter  ___      _       Welcome to Apache Solr™ version 8.6.3
+2022-08-08 08:02:59.639 INFO  (main) [   ] o.a.s.s.SolrDispatchFilter / __| ___| |_ _   Starting in standalone mode on port 8983
+2022-08-08 08:02:59.639 INFO  (main) [   ] o.a.s.s.SolrDispatchFilter \__ \/ _ \ | '_|  Install dir: /opt/solr
+2022-08-08 08:02:59.641 INFO  (main) [   ] o.a.s.s.SolrDispatchFilter |___/\___/_|_|    Start time: 2022-08-08T08:02:59.640950Z
+2022-08-08 08:03:00.311 INFO  (main) [   ] o.a.s.c.SolrPaths Using system property solr.solr.home: /var/solr/data
+2022-08-08 08:03:00.434 INFO  (main) [   ] o.a.s.c.SolrXmlConfig Loading container configuration from /var/solr/data/solr.xml
+2022-08-08 08:03:01.708 INFO  (main) [   ] o.a.s.c.SolrXmlConfig MBean server found: com.sun.jmx.mbeanserver.JmxMBeanServer@5032714f, but no JMX reporters were configured - adding default JMX reporter.
+2022-08-08 08:03:13.418 INFO  (main) [   ] o.a.s.h.c.HttpShardHandlerFactory Host whitelist initialized: WhitelistHostChecker [whitelistHosts=null, whitelistHostCheckingEnabled=true]
+2022-08-08 08:03:15.627 WARN  (main) [   ] o.e.j.u.s.S.config Trusting all certificates configured for Client@7a8136b3[provider=null,keyStore=null,trustStore=null]
+2022-08-08 08:03:15.638 WARN  (main) [   ] o.e.j.u.s.S.config No Client EndPointIdentificationAlgorithm configured for Client@7a8136b3[provider=null,keyStore=null,trustStore=null]
+2022-08-08 08:03:18.455 WARN  (main) [   ] o.e.j.u.s.S.config Trusting all certificates configured for Client@fabb651[provider=null,keyStore=null,trustStore=null]
+2022-08-08 08:03:18.456 WARN  (main) [   ] o.e.j.u.s.S.config No Client EndPointIdentificationAlgorithm configured for Client@fabb651[provider=null,keyStore=null,trustStore=null]
+2022-08-08 08:03:19.148 WARN  (main) [   ] o.a.s.c.CoreContainer Not all security plugins configured!  authentication=disabled authorization=disabled.  Solr is only as secure as you make it. Consider configuring authentication/authorization before exposing Solr to users internal or external.  See https://s.apache.org/solrsecurity for more info
+2022-08-08 08:03:21.299 INFO  (main) [   ] o.a.s.c.TransientSolrCoreCacheDefault Allocating transient cache for 2147483647 transient cores
+2022-08-08 08:03:21.329 INFO  (main) [   ] o.a.s.h.a.MetricsHistoryHandler No .system collection, keeping metrics history in memory.
+2022-08-08 08:03:22.991 INFO  (main) [   ] o.a.s.m.r.SolrJmxReporter JMX monitoring for 'solr.node' (registry 'solr.node') enabled at server: com.sun.jmx.mbeanserver.JmxMBeanServer@5032714f
+2022-08-08 08:03:22.993 INFO  (main) [   ] o.a.s.m.r.SolrJmxReporter JMX monitoring for 'solr.jvm' (registry 'solr.jvm') enabled at server: com.sun.jmx.mbeanserver.JmxMBeanServer@5032714f
+2022-08-08 08:03:23.278 INFO  (main) [   ] o.a.s.m.r.SolrJmxReporter JMX monitoring for 'solr.jetty' (registry 'solr.jetty') enabled at server: com.sun.jmx.mbeanserver.JmxMBeanServer@5032714f
+2022-08-08 08:03:25.782 INFO  (main) [   ] o.a.s.c.CorePropertiesLocator Found 1 core definitions underneath /var/solr/data
+2022-08-08 08:03:25.789 INFO  (main) [   ] o.a.s.c.CorePropertiesLocator Cores are: [numishare-published]
+2022-08-08 08:03:26.841 INFO  (coreLoadExecutor-13-thread-1) [   x:numishare-published] o.a.s.c.SolrConfig Using Lucene MatchVersion: 8.6.3
+2022-08-08 08:03:27.182 INFO  (main) [   ] o.e.j.s.h.ContextHandler Started o.e.j.w.WebAppContext@37bd68c3{/solr,file:///opt/solr-8.6.3/server/solr-webapp/webapp/,AVAILABLE}{/opt/solr-8.6.3/server/solr-webapp/webapp}
+2022-08-08 08:03:27.460 INFO  (main) [   ] o.e.j.s.AbstractConnector Started ServerConnector@6e35bc3d{HTTP/1.1, (http/1.1, h2c)}{0.0.0.0:8983}
+2022-08-08 08:03:27.492 INFO  (main) [   ] o.e.j.s.Server Started @68790ms
+2022-08-08 08:03:29.861 INFO  (coreLoadExecutor-13-thread-1) [   x:numishare-published] o.a.s.s.IndexSchema Schema name=default-config
+2022-08-08 08:03:40.601 INFO  (coreLoadExecutor-13-thread-1) [   x:numishare-published] o.a.s.s.IndexSchema Loaded schema default-config/1.6 with uniqueid field id
+2022-08-08 08:03:42.034 INFO  (coreLoadExecutor-13-thread-1) [   x:numishare-published] o.a.s.c.CoreContainer Creating SolrCore 'numishare-published' using configuration from instancedir /var/solr/data/numishare-published, trusted=true
+2022-08-08 08:03:42.467 INFO  (coreLoadExecutor-13-thread-1) [   x:numishare-published] o.a.s.m.r.SolrJmxReporter JMX monitoring for 'solr.core.numishare-published' (registry 'solr.core.numishare-published') enabled at server: com.sun.jmx.mbeanserver.JmxMBeanServer@5032714f
+2022-08-08 08:03:42.957 INFO  (coreLoadExecutor-13-thread-1) [   x:numishare-published] o.a.s.c.SolrCore [[numishare-published] ] Opening new SolrCore at [/var/solr/data/numishare-published], dataDir=[/var/solr/data/numishare-published/data/]
+2022-08-08 08:03:52.195 INFO  (coreLoadExecutor-13-thread-1) [   x:numishare-published] o.a.s.u.UpdateHandler Using UpdateLog implementation: org.apache.solr.update.UpdateLog
+2022-08-08 08:03:52.210 INFO  (coreLoadExecutor-13-thread-1) [   x:numishare-published] o.a.s.u.UpdateLog Initializing UpdateLog: dataDir= defaultSyncLevel=FLUSH numRecordsToKeep=100 maxNumLogsToKeep=10 numVersionBuckets=65536
+2022-08-08 08:03:52.442 INFO  (coreLoadExecutor-13-thread-1) [   x:numishare-published] o.a.s.u.CommitTracker Hard AutoCommit: if uncommitted for 15000ms; 
+2022-08-08 08:03:52.468 INFO  (coreLoadExecutor-13-thread-1) [   x:numishare-published] o.a.s.u.CommitTracker Soft AutoCommit: disabled
+2022-08-08 08:03:54.280 INFO  (coreLoadExecutor-13-thread-1) [   x:numishare-published] o.a.s.r.ManagedResourceStorage File-based storage initialized to use dir: /var/solr/data/numishare-published/conf
+2022-08-08 08:03:54.812 INFO  (coreLoadExecutor-13-thread-1) [   x:numishare-published] o.a.s.h.c.SpellCheckComponent Initializing spell checkers
+2022-08-08 08:03:54.920 INFO  (coreLoadExecutor-13-thread-1) [   x:numishare-published] o.a.s.s.DirectSolrSpellChecker init: {name=default,field=_text_,classname=solr.DirectSolrSpellChecker,distanceMeasure=internal,accuracy=0.5,maxEdits=2,minPrefix=1,maxInspections=5,minQueryLength=4,maxQueryFrequency=0.01}
+2022-08-08 08:03:55.246 INFO  (coreLoadExecutor-13-thread-1) [   x:numishare-published] o.a.s.h.ReplicationHandler Commits will be reserved for 10000 ms
+2022-08-08 08:03:55.407 INFO  (coreLoadExecutor-13-thread-1) [   x:numishare-published] o.a.s.u.UpdateLog Could not find max version in index or recent updates, using new clock 1740579364307730432
+2022-08-08 08:03:55.544 INFO  (searcherExecutor-15-thread-1-processing-x:numishare-published) [   x:numishare-published] o.a.s.c.QuerySenderListener QuerySenderListener done.
+2022-08-08 08:03:55.544 INFO  (searcherExecutor-15-thread-1-processing-x:numishare-published) [   x:numishare-published] o.a.s.h.c.SpellCheckComponent Loading spell index for spellchecker: default
+2022-08-08 08:03:55.862 INFO  (searcherExecutor-15-thread-1-processing-x:numishare-published) [   x:numishare-published] o.a.s.c.SolrCore [numishare-published]  Registered new searcher autowarm time: 0 ms
